@@ -52,30 +52,28 @@
                   %li Height of content and sidebar must grow to accommodate more content
                   %li Height of content and sidebar must not be shorter than window height
                   %li Height of header must remain flexible, and not impact the CSS used to fix this issue.
-                  %li Width content and sidebar backgrounds
-                  %li Scrolling only when needed.
+                  %li Content and sidebar backgrounds must extend to fill 100% width
+                  %li Scrollbars only when needed.
                   %li No Javascript to fix the problem (I realize that with jquery, it would be trivial to set the height, but there's gotta be a way in CSS!)
-                  %li Target Browsers: Firefox 3+, Safari 3+, bonus points for ie7+8
+                  %li Target Browsers: Firefox 3+, Safari 3+, bonus points for ie7+8 (separate stylesheet okay)
             .section
               .header
                 %h2.title Delivery
               .article
                 .header
                   %h3 
-                    %a{:href=>"http://github.com/seaofclouds/fix-me"}> Fork this repo on github
-                    , hack, and submit your patch, OR
-                  %h3 
                     Message 
                     %a{:href=>"http://twitter.com/seaofclouds"} @seaofclouds on twitter 
-                    or 
-                    %a{:href=>"http://github.com/seaofclouds"} github 
-                    with a link to your fix.
+                    with a link to your fix, OR:
+                  %h3 
+                    %a{:href=>"http://github.com/seaofclouds/fix-me"}> Fork this repo on github
+                    , hack, restructure, and submit your patch!
             .section
               .header
                 %h2.title Compensation
               .article
                 .header
-                  %h3 $100 via paypal
+                  %h3 $100 via paypal, or if you're in San Francisco, I'll see you at the next github meetup
             
             
           .aside
