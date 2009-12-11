@@ -1,0 +1,114 @@
+// rounded corners
+
+=rounded-xsmall
+  :-moz-border-radius     3px
+  :-webkit-border-radius  3px
+=rounded-xsmall-bottom
+  :-moz-border-radius-bottomright     3px
+  :-webkit-border-bottom-right-radius 3px
+  :-moz-border-radius-bottomleft      3px
+  :-webkit-border-bottom-left-radius  3px
+=rounded-small
+  :-moz-border-radius     7px
+  :-webkit-border-radius  7px
+=rounded-small-top
+  :-moz-border-radius-topleft       7px
+  :-webkit-border-top-left-radius   7px
+  :-moz-border-radius-topright      7px
+  :-webkit-border-top-right-radius  7px
+=rounded-small-left
+  :-moz-border-radius-bottomleft      7px
+  :-webkit-border-bottom-left-radius  7px
+  :-moz-border-radius-topleft         7px
+  :-webkit-border-top-left-radius     7px
+=rounded-small-right
+  :-moz-border-radius-bottomright     7px
+  :-webkit-border-bottom-right-radius 7px
+  :-moz-border-radius-topright      7px
+  :-webkit-border-top-right-radius  7px
+=rounded-small-bottom
+  :-moz-border-radius-bottomright     7px
+  :-webkit-border-bottom-right-radius 7px
+  :-moz-border-radius-bottomleft      7px
+  :-webkit-border-bottom-left-radius  7px
+=rounded
+  :-moz-border-radius     10px
+  :-webkit-border-radius  10px
+=rounded-none
+  :-moz-border-radius     0px
+  :-webkit-border-radius  0px
+=rounded-large
+  :-moz-border-radius     14px
+  :-webkit-border-radius  14px
+=rounded-large-top
+  :-moz-border-radius-topright      14px
+  :-webkit-border-top-right-radius  14px
+  :-moz-border-radius-topleft       14px
+  :-webkit-border-top-left-radius   14px
+=rounded-large-bottom
+  :-moz-border-radius-bottomright     14px
+  :-webkit-border-bottom-right-radius 14px
+  :-moz-border-radius-bottomleft      14px
+  :-webkit-border-bottom-left-radius  14px
+// shadows
+=shadow-large
+  :-moz-box-shadow    2px 2px 7px #151515
+  :-webkit-box-shadow 2px 2px 7px #151515
+=shadow-medium
+  :-moz-box-shadow    2px 2px 4px #1d1d1d
+  :-webkit-box-shadow 2px 2px 4px #1d1d1d
+=shadow-small
+  :-moz-box-shadow    2px 2px 6px #232323
+  :-webkit-box-shadow 2px 2px 6px #232323
+=shadow-small-light
+  :-moz-box-shadow    2px 2px 2px #202020
+  :-webkit-box-shadow 2px 2px 2px #202020
+=shadow-xsmall
+  :-moz-box-shadow    1px 1px 1px #111
+  :-webkit-box-shadow 1px 1px 1px #111
+=shadow-none
+  :-moz-box-shadow    none
+  :-webkit-box-shadow none
+// clearfix
+
+= clear
+  .clear
+    :clear both
+=has-layout
+  :display inline-block
+  &
+    :display block
+=clearfix
+  :overflow hidden
+  +has-layout
+=pie-clearfix
+  &:after
+    :content " "
+    :display block
+    :height 0
+    :clear both
+    :overflow hidden
+    :visibility hidden
+  +has-layout
+
+// inline lists 
+
+=inline
+  :list-style-type none
+  +clearfix
+  li
+    :float left
+    :margin-left 10px
+    &:first-child
+      :margin-left 0
+
+// fonts
+
+=hybrea
+  :font-family "Hybrea", sans-serif
+  :letter-spacing 1px
+=hybreabold
+  :font-family "Hybrea Bold", sans-serif
+  :letter-spacing 1px
+=corbel
+  :font-family "Corbel", sans-serif

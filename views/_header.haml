@@ -1,0 +1,28 @@
+:plain  
+  <div id="header">
+    <h1 id="logo"><a href="http://heroku.com/" title="Heroku: Provisionless Hosting for Ruby Applications">Heroku</a></h1>
+    <ul class='account-links inline'>
+      <div id="logged-in-links" style="display: none;">
+        <li><a href="http://heroku.com/myapps">My Apps</a></li>
+        <li><a href="http://heroku.com/account">My Account</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </div>
+      <li id="account_login"><a href="/login">Login</a></li>
+    </ul>
+    <ul class='info-links inline'>
+      <!-- <li><a href="http://heroku.com/about">About</a></li> -->
+      <li><a href="http://heroku.com/how">How it Works</a></li>
+      <li><a href="http://heroku.com/pricing">Pricing</a></li>
+      <!-- <li><a href="http://blog.heroku.com/">Blog</a></li> -->
+      <li><a href="http://docs.heroku.com/">Docs</a></li>
+      <li><a href="http://support.heroku.com/" id="support_link">Support</a></li>
+    </ul>
+  </div>
+
+  <script type="text/javascript">
+    if (document.cookie.indexOf('heroku_session=') != -1) {
+      document.getElementById('support_link').href = 'http://heroku.com/helpdesk/login';
+      document.getElementById('logged-in-links').style.display = 'block';
+      document.getElementById('account_login').style.display = 'none';
+    }
+  </script>

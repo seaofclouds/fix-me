@@ -1,0 +1,262 @@
+@import reset.sass
+@import colors.sass
+@import tools.sass
+@import forms.sass
+@import fontface.sass
+
+// == PAGE STRUCTURE ==========================================================================
+
+html, body
+  +reset
+  :background-color = !ancillary_darkest
+  :color = !ancillary_light
+  :height 100%
+  a
+    :color #4a4a4d
+    :text-decoration none
+    &:hover
+      :text-decoration underline
++nested-reset
++clear
+
+= section-background
+  :background-color #252630
+  :background-image url(/images/help/section-background-purple.png)
+  :background-repeat repeat-x
+  :background-position left top
+= aside-background
+  :background-color #21222b
+  :background-image url(/images/help/aside-background-purple.png)
+  :background-repeat repeat-x
+  :background-position left top
+= fullheight
+  :min-height 100%
+= background(!padding = "none", !zindex = "0")
+  .background
+    .left, .right
+      :position absolute
+      :top 0
+      :z-index = !zindex
+      :width 50%
+      +fullheight
+      :padding-top = !padding
+    .left
+      :left 0
+      +section-background
+    .right
+      :right 0
+      +aside-background
+
+.container
+  :width 100%
+  :height 100%
+  :min-height 100%
+  :position relative
+  #body-background
+    :position fixed
+    :z-index -1
+    :bottom 0
+    +background(60px, -1)
+    .aside, .section, .background .left, .background .right
+      :background none
+    .aside, .background .right
+      :background-color #21222b
+    .section, .background .left
+      :background-color #252630
+  .container
+    :position relative
+    :text-align center
+    +fullheight
+    +background(60px, "none")
+    .background
+      .left, .right
+        :position absolute
+    .container
+      :position relative
+      :z-index 1
+      :text-align left
+      :width 1000px
+      :margin 0 auto
+      +pie-clearfix
+      .container
+        +reset-block
+      section, .section
+        :float left
+        :width 610px
+        +fullheight
+        :padding 30px
+        +section-background
+        :color #d9d7e6
+        section, .section
+          +reset-block
+      aside, .aside
+        :float right
+        :width 270px
+        +fullheight
+        :padding 30px
+        :position relative
+        :text-shadow #000 0 1px 0px
+        :color #d9d7e6
+        aside, .aside
+          +reset-block
+        .shadow
+          +fullheight
+          :position absolute
+          :width 10px
+          :left 0
+          :top 0
+          :background-image url(/images/help/aside-shadow-purple.png)
+          :background-repeat repeat-y
+          :background-position left top
+          
+
+// == asides =====================================================================================
+
+.container .container .container
+  aside, .aside
+    aside, .aside
+      :background-image url(/images/help/aside-aside-background-purple.png)
+      :background-repeat repeat-x
+      :background-color #1d1e26
+      :background-position left top
+      :margin-bottom 30px
+      :border 1px solid #2e2e3b
+      :-moz-border-radius 7px
+      :-webkit-border-radius 7px
+      :-moz-box-shadow    0px 0px 5px #111019
+      :-webkit-box-shadow 0px 0px 5px #111019
+      h3, p
+        :padding-left 15px
+        :padding-right 15px
+      h3
+        :margin-top 19px
+        :padding-bottom 5px
+        :line-height 15px
+        :font-size 20px
+        :color #b9aff8
+        a
+          :color #b9aff8
+          +corbel
+          :text-decoration none
+          &:hover
+            :text-decoration none
+      p
+        :padding-top 10px
+        :padding-bottom 15px
+        :font-size 14px
+      h2
+        :padding 12px 15px 12px 15px
+        :color #fff
+        +corbel
+        :font-size 22px
+        :border-bottom 1px solid #2e2e3b
+      &.hover
+        :cursor pointer
+        :background-color #25252f
+        :background-image url(/images/help/aside-aside-background-hover.png)
+        :border 1px solid #393A4C
+        h2
+          :border-bottom 1px solid #393A4C
+        h3
+          :background-image url(/images/help/outlink-purple.png)
+          :background-repeat no-repeat
+          :background-position 245px -14px
+
+// == section, article ===========================================================================
+
+.container .container .container
+  section, .section
+    section, .section
+      :padding-bottom 31px
+      :clear both
+      .header
+        :border-bottom 1px solid #2e2e3b
+        :margin-bottom 10px
+        h2
+          :color #fff
+          +corbel
+          :font-size 30px
+          :padding-top 5px
+          :padding-left 5px
+          :padding-bottom 10px
+      article, .article
+        :padding 5px
+        :margin-bottom 10px
+        .header
+          :border none
+          :margin-bottom 0
+          +clearfix
+          h3
+            :padding-bottom 10px
+            :font-size 20px
+            :color #b9aff8
+            :float left
+            +corbel
+            a
+              :color #b9aff8
+          a.outlink
+            :display none
+            :float right
+            :margin-top 8px
+            :padding-right 17px
+            :background-image url(/images/help/outlink-purple.png)
+            :background-position right -17px
+            :background-repeat no-repeat
+            :font-size 12px
+            :text-transform uppercase
+            :color #8780b0
+            :text-decoration none
+        p, li
+          :clear both
+          :font-size 14px
+        li
+          :list-style-type square
+          :margin-left 1.4em
+          :line-height 18px
+        &.hover
+          :cursor pointer
+          :-moz-border-radius 5px
+          :-webkit-border-radius 5px
+          :background-color #25252f
+          :background-image url(/images/help/aside-aside-background-hover.png)
+          .header
+            h3
+              a
+                :text-decoration none
+                :color #D2CEFF
+            a.outlink
+              :display block
+              :background-position right -1px
+              :color #9E97CF
+        
+// == header =====================================================================================
+
+@import _header.sass
+
+.header
+  .header
+    :background-image url(/images/help/pattern-yukiwa_sakura.png)
+    :background-repeat repeat-x
+    :background-position center top
+    :text-align center
+    :border-bottom 1px solid #2b2b38
+    :position relative
+    .shadow
+      :position absolute
+      :width 100%
+      :height 10px
+      :left 0
+      :top 0
+      :background-image url(/images/help/header-shadow-purple.png)
+      :background-repeat repeat-x
+      :background-position left top
+    h1
+      :padding 50px 30px 55px 30px
+      :color = !secondary_light
+      :padding-right 10px
+      :padding-left 5px
+      :width 940px
+      :margin 0 auto
+      :position relative
+      +corbel
+      :font-size 42px

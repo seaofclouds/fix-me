@@ -1,0 +1,97 @@
+!!! XML
+!!! Strict
+%html{ :xmlns => "http://www.w3.org/1999/xhtml", :lang => "en", 'xml:lang' => "en" }
+  %head
+    %title Heroku | Help
+    %meta{'http-equiv'=>"content-type", :content=>"text/html; charset=UTF-8"}/
+    %link{:href=>"/stylesheets/help.css", :media=>"all", :rel=>"stylesheet", :type=>"text/css"}/
+    %script{:src=>"/javascript/jquery-1.3.2.min.js", :type=>"text/javascript"}/
+    :javascript
+      $(document).ready(function() {
+        $(".aside .aside").hover(function(){
+          $(this).addClass("hover");
+          $(this).click(function(){
+            window.location = $(this).find("a.outlink:first").attr("href");
+            return false;
+          });
+        }, function(){
+          $(this).removeClass("hover");
+        });
+        $(":text:visible:enabled:first").focus();
+      });
+
+    %meta{:name => "viewport", :content => "width = device-width, initial-scale = 1.0"}/
+    %meta{:name => "apple-mobile-web-app-capable", :content => "yes"}/
+    %meta{:name => "apple-mobile-web-app-status-bar-style", :content => "black-translucent"}/
+  %body
+    .container
+      .header
+        = partial(:header)
+        .header
+          .shadow
+          %h1 Help us fix this layout!
+            
+      .container
+        .content.container
+          .section
+            .section
+              .header
+                %h2.title The Problem
+              .article
+                .header
+                  %h3 Scrollbars appear when they don't need to. This is due to the 100% height / min-height style.
+            .section
+              .header
+                %h2.title Requirements
+              .article
+                %ul
+                  %li Fixed width and centered content and sidebar
+                  %li Height of content and sidebar must be the same
+                  %li Height of content and sidebar must grow to accommodate more content
+                  %li Height of content and sidebar must not be shorter than window height
+                  %li Height of header must remain flexible, and not impact the CSS used to fix this issue.
+                  %li Width content and sidebar backgrounds
+                  %li Scrolling only when needed.
+                  %li No Javascript to fix the problem (I realize that with jquery, it would be trivial to set the height, but there's gotta be a way in CSS!)
+                  %li Target Browsers: Firefox 3+, Safari 3+, bonus points for ie7+8
+            .section
+              .header
+                %h2.title Delivery
+              .article
+                .header
+                  %h3 Fork this repo from github, hack, and submit your patch, OR
+                  %h3 Message @seaofclouds on twitter or github with a link to your fix.
+            .section
+              .header
+                %h2.title Compensation
+              .article
+                .header
+                  %h3 $100 via paypal
+            
+            
+          .aside
+            .shadow
+            .aside
+              %h2 Sidebar Item 1
+              %h3
+                %a.outlink{:href=>"http://heroku.com"} heroku.com
+              %p
+                Sidebar Content
+            .aside
+              %h2 Sidebar Item 2
+              %h3
+                %a.outlink{:href=>"http://heroku.com"} heroku.com
+              %p
+                More Sidebar Content
+        .background
+          .left
+          .right
+      .footer
+      #body-background.container
+        .background
+          .left
+          .right
+        .content.container
+          .section
+          .aside
+            .shadow

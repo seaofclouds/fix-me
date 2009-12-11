@@ -1,0 +1,251 @@
+=button
+  +rounded-large
+  +shadow-small
+  :background-color = !secondary + #111
+  :text-shadow #c9c3e6 0px 0px 2px
+  :color = !secondary_dark - #111
+  :font-size 14px
+  :background-image url(/images/button-smooth.png)
+  :background-repeat repeat-x
+  :background-position center bottom
+  :padding 7px 20px 7px 20px
+  :font-weight bold
+  :cursor pointer
+
+html, body
+  input
+    &.text
+      :font-size 12px
+      :padding 7px
+      +rounded-xsmall
+      :background-color = !secondary_lightest
+    &.checkbox
+      :margin-right 5px
+  input, a
+    &.submit, &.button
+      +button
+      :text-decoration none
+      &:hover
+        :background-color = !secondary_lightest
+        :text-decoration none
+      &.disabled
+        :background-color = !ancillary
+        :text-shadow #aaa 0px 0px 2px
+        :color = !ancillary_darkest
+      &.add, &.remove
+        +rounded
+        :padding 2px 7px 3px 7px
+        :font-size 14px
+        :background-color #A3BA5F
+        :color #353A1E
+        &:hover
+          :background-color #CADE74
+      &.remove
+        :padding 0 8px 2px 8px
+        :font-size 18px
+        :background-color = !error
+        :color = !error - #666
+        :text-shadow #EEB4B5 0px 0px 2px
+        &:hover
+          :background-color = !error + #333
+          :text-decoration none
+    &.destroy
+      +rounded-large
+      +shadow-small
+      :font-weight bold
+      :color #0E0909
+      :text-shadow #999 0px 0px 2px
+      :background-color #666
+      :background-image url(/images/button-smooth-red.png)
+      :background-repeat repeat-x
+      :background-position center bottom
+      :cursor pointer
+      :margin-bottom 2px
+      &:hover
+        :background-color #888
+    &.selectbox
+      :padding-right 25px
+      :position relative
+      :background-image url(/images/form-select-closed.png)
+      :background-position right center
+      :background-repeat no-repeat
+  .selectbox-wrapper, .ac_results
+    :position absolute
+    +shadow-small
+    :z-index 12
+    :background-color = !complimentary_lightest
+    :color = !secondary_dark
+    :padding-bottom 3px
+    :max-height 150px
+    :overflow auto
+    +rounded-xsmall-bottom
+    li
+      :padding 5px 5px 5px 8px
+      :font-size 12px
+      :margin-bottom -3px
+      strong
+        :font-weight normal
+      &.selected
+        :color = !complimentary_darker
+        :font-weight bold
+      &.current
+        :background-color = !complimentary_light
+        &:last-child
+          +rounded-xsmall-bottom
+  select
+    :border none
+    :background-color = !secondary_lightest
+    :margin-top 0
+    :margin-left 0
+    :padding 7px
+    :height 28px
+    :font-size 12px
+    +rounded-xsmall
+  .notice
+    :color #fff
+    :padding 10px 10px 8px 10px
+    :margin-bottom 15px
+    :background-color #5987a0
+    :background-image url(/images/notice-bkg.png)
+    :background-repeat repeat-x
+    :background-position center bottom
+    +rounded-small
+    +shadow-medium
+    a
+      :color #fff
+      :text-decoration underline
+    em
+      :padding 3px
+      +rounded-xsmall
+    h3
+      :line-height 30px
+      :padding-top 1px
+      :background-image url(/images/notice-icon-35x35.png)        
+      :background-position left top
+      :background-repeat no-repeat
+      :padding-left 35px
+    &.success
+      :background-color #7c984c
+      :background-image url(/images/notice-success-bkg.png)
+      em
+        :background-color = !error_lighter
+        :color = !error_darker
+      h3
+        :background none
+        :padding-left 10px
+        :line-height 24px
+    &.error
+      :background-color = !error
+      :background-image url(/images/notice-error-bkg.png)
+      em
+        :background-color = !error_lighter
+        :color = !error_darker
+      h3
+        :background-image url(/images/notice-error-icon-35x35.png)        
+        :background-position left top
+        :background-repeat no-repeat
+        :padding-left 40px
+  form
+    .overview
+      :padding 20px
+    .notice
+      :margin-right 20px
+      :margin-left  20px
+      :margin-bottom 20px
+    fieldset
+      :overflow auto
+      :border-top-width 4px
+      :border-top-color = !ancillary_darker
+      :border-top-style solid 
+      :padding 20px 30px 15px 30px
+      &:first-child
+        :border-top-style none 
+      &:last-child
+        :padding-bottom 0
+      &.active
+        :background-color = !ancillary_darker
+      p.overview
+        :padding 0 0 20px 0
+      legend, h3
+        :color = !secondary_light
+        :padding-right 1em
+      h3
+        :margin-bottom 20px
+        :padding-right 0
+      .row
+        :clear both
+        :overflow hidden
+        &:last-child
+          :padding-bottom 0
+        .field
+          :float left
+          :margin-right 20px
+          &:last-child
+            :margin-right 0px
+      .formError
+        :margin 0
+        :padding-top 7px
+        :padding-left 7px
+        :color = !error_lightest
+        :font-size 12px
+        :display block
+        :clear both
+      .field
+        :margin-bottom 15px
+        label
+          :margin-bottom 2px
+          :font-size 12px
+        label, input, .formError
+          :display block
+        .formError
+          :padding-top 2px
+          :padding-left 0
+        &.active
+          select, .text
+            :background-color = !complimentary_lightest
+            +shadow-small
+          .selectbox
+            :background-image url(/images/form-select-active-closed.png)
+            &.open
+              :background-image url(/images/form-select-active-open.png)
+              :-moz-border-radius-bottomright 0
+              :-webkit-border-bottom-right-radius 0
+              :-moz-border-radius-bottomleft 0
+              :-webkit-border-bottom-left-radius 0
+        &.error
+          :color = !error_lighter
+          select, .text
+            :background-color = !error_lighter
+          .selectbox
+            :background-image url(/images/form-select-error-closed.png)
+            &.open
+              :background-image url(/images/form-select-error-open.png)
+          .selectbox-wrapper
+            :background-color = !error_lighter
+          &.active
+            select, .text
+              :background-color = !error_lightest
+            .selectbox
+              :background-image url(/images/form-select-error-active-closed.png)
+              &.open
+                :background-image url(/images/form-select-error-active-open.png)
+            .selectbox-wrapper, .ac_results
+              :background-color = !error_lightest
+              .selected
+                :color = !error
+              .current
+                :background-color = !error_lighter
+                :color = !error_darkest
+    p.submit, fieldset.submit
+      :text-align right
+      :padding 20px 30px 20px 30px
+      .confirmation
+        :text-align left
+      p
+        :float left
+        :line-height 30px
+
+html body #content form
+  :padding 0 !important
+  &.panel-body
+    :padding 0 !important

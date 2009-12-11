@@ -1,0 +1,58 @@
+#header
+  :background-color = !main_dark
+  :border-bottom-style solid
+  :border-bottom-width 3px
+  :border-bottom-color = !main
+  +clearfix
+  a
+    :color = !main_lightest
+    :text-decoration none
+    :font-weight normal
+    &:hover
+      :color #fff
+  #logo
+    :margin 20px 0 15px 25px
+    :float left
+    a
+      :display block
+      :text-indent -9999px
+      :width 177px
+      :height 56px
+      :overflow hidden
+      :background-image url(/images/logo.png)
+      :background-repeat no-repeat
+  ul
+    +inline
+    :float right
+    :margin-top 30px
+    :padding 10px
+    li
+      :border-left-style solid
+      :border-left-width 2px
+      :border-left-color = !main_light
+      :padding-left 10px
+      :font-size 16px
+      &:first-child,
+      &#account_login
+        :border none
+        :margin-left 0
+        :padding-left 0
+      a.active
+        :color = !highlight
+        &:hover
+          :color = !highlight
+    &.account-links
+      :background-color = !main_darker
+      :padding-left 15px
+      :padding-right 15px
+      :margin-right 25px
+      :margin-left 10px
+      +rounded-small
+      a
+        :color = !complimentary_dark
+        &:hover
+          :color = !complimentary_lighter
+        &.active
+          :color = !highlight
+          &:hover
+            :color = !highlight
