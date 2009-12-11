@@ -25,11 +25,13 @@
     %meta{:name => "apple-mobile-web-app-status-bar-style", :content => "black-translucent"}/
   %body
     .container
+      :plain
+        <a href="http://github.com/seaofclouds/fix-me"><img style="position: absolute; z-index:1000; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
       .header
-        = partial(:header)
+        .logo my fancy header
         .header
           .shadow
-          %h1 Help us fix this layout!
+          %h1 Help me fix this layout!
             
       .container
         .content.container
@@ -59,8 +61,15 @@
                 %h2.title Delivery
               .article
                 .header
-                  %h3 Fork this repo from github, hack, and submit your patch, OR
-                  %h3 Message @seaofclouds on twitter or github with a link to your fix.
+                  %h3 
+                    %a{:href=>"http://github.com/seaofclouds/fix-me"}> Fork this repo on github
+                    , hack, and submit your patch, OR
+                  %h3 
+                    Message 
+                    %a{:href=>"http://twitter.com/seaofclouds"} @seaofclouds on twitter 
+                    or 
+                    %a{:href=>"http://github.com/seaofclouds"} github 
+                    with a link to your fix.
             .section
               .header
                 %h2.title Compensation
@@ -74,13 +83,13 @@
             .aside
               %h2 Sidebar Item 1
               %h3
-                %a.outlink{:href=>"http://heroku.com"} heroku.com
+                %a.outlink{:href=>"http://twitter.com/seaofclouds"} twitter.com
               %p
                 Sidebar Content
             .aside
               %h2 Sidebar Item 2
               %h3
-                %a.outlink{:href=>"http://heroku.com"} heroku.com
+                %a.outlink{:href=>"http://github.com/seaofclouds"} github.com
               %p
                 More Sidebar Content
         .background
